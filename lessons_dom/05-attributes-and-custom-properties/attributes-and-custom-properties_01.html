@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Получите пользовательский атрибут</title>
+</head>
+<body>
+    <body>
+
+        <div id="widget" data-widget-name="menu">Выберите жанр</div>
+
+        <script>
+            var widget = document.getElementById('widget');
+            var name = widget.dataset.widgetName;
+            console.log(name);
+        </script>
+    </body>
+</body>
+</html>

@@ -18,7 +18,7 @@ dog.run(50);
 
 class Rabbit extends Animal {
     jump() {
-        super.run();
+        // super.run(speed);
         
         this.speed++;
         console.log(`${this.name} прыгает, скорость ${this.speed}`);
@@ -27,4 +27,6 @@ class Rabbit extends Animal {
 
 const krol = new Rabbit('Jack');
 
-krol.jump(150);
+krol.run(50);
+
+krol.jump();

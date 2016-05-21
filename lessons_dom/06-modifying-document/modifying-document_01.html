@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>createTextNode vs innerHTML</title>
+</head>
+<body>
+    <div id="text-node"></div>
+
+    <div id="inner-html"></div>
+
+    <script>
+        var text = document.getElementById('text-node');
+        var inner = document.getElementById('inner-html');
+
+        var string = '<span>Текст, обертнутый в тэг</span>';
+
+        text.appendChild(document.createTextNode(string));
+        inner.innerHTML = string;
+    </script>
+</body>
+</html>

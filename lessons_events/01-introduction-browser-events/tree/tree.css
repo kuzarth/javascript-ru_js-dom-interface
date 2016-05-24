@@ -1,0 +1,20 @@
+.menu .menu-list {
+    display: none;
+}
+
+.active.menu .menu-list {
+    display: block;
+}
+
+.menu .menu-title {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu .menu-title:before {
+    content: '▶';
+}
+
+.active.menu .menu-title:before {
+    content: '▼';
+}

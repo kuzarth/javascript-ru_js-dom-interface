@@ -13,7 +13,13 @@
         /* ваш код полифилла */
 
         if (!Element.prototype.remove) {
-            console.log('no support');
+
+            Element.prototype.remove = function () {
+                if(this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            }
+
         }
 
         var elem = document.body.children[0];

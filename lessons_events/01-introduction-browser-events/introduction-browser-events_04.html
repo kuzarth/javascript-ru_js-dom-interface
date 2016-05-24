@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="introduction-browser-events_04.js" defer></script>
+
+    <style>
+        .summary {
+            position: relative;
+            padding-left: 20px;
+            cursor: pointer;
+        }
+
+        .summary:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 8.7px;
+            border-color: transparent transparent transparent #2b8f3f;
+        }
+
+        .summary.is-opened:before {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .details {
+            display: block;
+        }
+
+        .details[hidden] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="summary">Сладости (нажми меня)!</div>
+<ul class="details" hidden>
+    <li>Торт</li>
+    <li>Пончик</li>
+    <li>Пирожное</li>
+</ul>
+
+<script>
+    var summary = document.querySelector('.summary');
+    var details = document.querySelector('.details');
+
+    summary.addEventListener('click', function(e) {
+        if(summary.classList.contains('is-opened')) {
+            summary.classList.remove('is-opened');
+            details.setAttribute('hidden', 'true');
+        } else {
+            summary.classList.add('is-opened');
+            details.removeAttribute('hidden');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать список</title>
+</head>
+<body>
+    <h1>Создать список</h1>
+
+    <script>
+        var list = document.createElement('ul');
+        document.body.appendChild(list);
+
+        var text = prompt('Добавьте пункт в список', '');
+
+        while(text) {
+            var listItem = document.createElement('li');
+            listItem.appendChild(document.createTextNode(text));
+            list.appendChild(listItem);
+            text = prompt('Добавьте пункт в список', '');
+        }
+    </script>
+</body>
+</html>

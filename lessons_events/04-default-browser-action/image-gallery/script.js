@@ -9,17 +9,20 @@ class Gallery {
     }
     
     _click(event) {
-        event.preventDefault();
-
         let link = event.target.closest('a');
 
-        if(link) {
-            let href = link.href;
-            let title = link.title;
-
-            this._largeImg.src = href;
-            this._largeImg.alt = title;
+        if(!link) {
+            return;
         }
+
+        event.preventDefault();
+
+        this._showImage(link);
+    }
+
+    _showImage(link) {
+        this._largeImg.src = link.href;
+        this._largeImg.alt = link.title;
     }
 }
 
